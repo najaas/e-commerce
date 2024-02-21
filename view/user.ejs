@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+        <div class="navbar">
+                <img src="/brandlogo.png" alt="" class="brandLogo">
+            <input type="text" id="search" name="search" placeholder="Search Items">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            
+            <form action="/user" method="get">
+           <button type="submit" class="logout"><a href="/login">Logout</a></button>
+            </form>
+            <!-- <form action="/user/userDetailes" method="get">
+                
+            </form>
+             -->
+             <!-- <button  onclick="window.location.href='/userDetailes'" style="height: 30px; width: 150px; margin-top:2.5%  ; margin-left: -5%;" >Complete/edit yor profile</button> -->
+             <button  onclick="window.location.href='/user/profile'" style="height: 30px; width: 150px;margin-top: 2.5%; margin-left: 2%;">Show your profile</button>
+        
+        </div> 
+        <div class="main">
+            <% Products.forEach((card)=>{ %>
+            <div class="card">
+                 <div class="cardimage"><img src="/image/<%= card.image %>" alt="" class="cardimageO"></div>
+                <h1 class="cardname"><%= card.name %></h1>
+                 <p class="cardprice">₹ <%= card.price%> /kg</p>
+                 <p class="carddiscription">Category : <%= card.discription %></p>
+                 <button style="height: 30px; width: 100px; background-color: yellow; border-radius: 10px; border: none; margin-top: 15%; margin-left: 5%; color: black;">Add to cart</button>
+                 <button style="height: 30px; width: 100px; background-color: red; border-radius: 10px; border: none; margin-top: 15%; margin:0% 0% 0% 22%; color: white;">Buy Now</button>
+
+            </div>
+            <% })%>
+        </div>
+</body>
+</html>
